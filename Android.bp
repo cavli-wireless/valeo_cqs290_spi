@@ -1,0 +1,95 @@
+//
+// Copyright (C) 2011 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+cc_binary{
+  name : "cavli-hello",
+
+  srcs : [
+    "main.c",
+  ],
+
+  local_include_dirs : [],
+
+  static_libs : [
+    "libhello",
+    "libcavli_log",
+  ],
+
+  shared_libs : [
+    "liblog",
+  ],
+
+  cflags : [
+    "-DANDROID_CHANGES",
+    "-DHAVE_CONFIG_H",
+    "-D_BSD_SOURCE=1",
+    "-Wno-sign-compare",
+    "-Wno-missing-field-initializers",
+    "-Wno-unused-parameter",
+    "-Wno-pointer-sign",
+    "-Werror",
+    "-Wno-unused-variable",
+    "-Wno-unused-but-set-variable",
+    "-Wno-unused-function",
+    "-Wno-unused-label",
+    "-Wno-unused-value",
+  ],
+
+  init_rc : [""],
+}
+
+cc_library_static{
+  name : "libhello",
+
+  srcs : [
+    "src/hello.c",
+  ],
+
+  cflags : [
+    "-DANDROID_CHANGES",
+    "-DHAVE_CONFIG_H",
+    "-Wno-sign-compare",
+    "-Wno-missing-field-initializers",
+    "-Wno-unused-parameter",
+    "-Wno-pointer-sign",
+    "-Werror",
+  ],
+
+  local_include_dirs : ["inc"],
+  export_include_dirs : ["inc"],
+}
+
+cc_library_static {
+name:
+  "libcavli_log",
+
+    srcs: [
+        "src/cavli_log.c",
+    ],
+
+    cflags: [
+        "-DANDROID_CHANGES",
+        "-DHAVE_CONFIG_H",
+        "-Wno-sign-compare",
+        "-Wno-missing-field-initializers",
+        "-Wno-unused-parameter",
+        "-Wno-pointer-sign",
+        "-Werror",
+    ],
+
+    local_include_dirs: ["inc"],
+    export_include_dirs: ["inc"],
+}
