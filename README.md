@@ -62,7 +62,7 @@ PRODUCT_COPY_FILES += \
 - Open file ```device/qcom/bengal_2w/init.target.rc``` and add below content
 
 ```
- on early-fs
+ on early-init
     start cavli-hello
 ```
 
@@ -128,7 +128,7 @@ fastboot flash vbmeta_system out/target/product/bengal_2w/vbmeta_system.img
 fastboot erase misc
 ```
 
-## 7. Tes cavli-hello application in development
+## 7. Test cavli-hello application in development
 
 - This step only needs to be done once.
 
