@@ -32,7 +32,7 @@ make cavli-hello
 ```
 
 
-# How to add init service
+# How to add init service to bengal_2w
 
 ## 1. Prepare your C application
 - Compile your *c application* and get the binary
@@ -48,7 +48,7 @@ service cavli-hello /vendor/bin/cavli-hello
     task_profiles HighPerformance
 ```
 
-## 2. Add C applications and init service to device makefile
+## 2. Add C applications and init service to bengal_2w device makefile
 
 - Add below to file ```device/qcom/bengal_2w/bengal_2w.mk```
 
